@@ -10,6 +10,19 @@ from django.utils.text import slugify
 from comments.forms import CommentForm
 from .models import Post, Category, Tag
 
+from django.shortcuts import render
+from bokeh.plotting import figure
+from bokeh.resources import CDN
+from bokeh.embed import components
+
+def simple_chart(request):
+    plot = figure()
+    plot.circle([1,2], [3,4])
+
+    script, div = components(plot, CDN)
+
+    return render(request, "blog/simple_chart.html", {"the_script": script, "the_div": div})
+
 """
 请使用下方的模板引擎方式。
 def index(request):
