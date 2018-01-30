@@ -1,18 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Experiment with Bokeh</title>
-    <link href="{% static 'bokeh-0.12.4.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'bokeh-widgets-0.12.4.min.css' %}" rel="stylesheet" type="text/css">
-    <script src="{% static 'bokeh-0.12.4.min.js' %}"></script>
-    <script src="{% static 'bokeh-widgets-0.12.4.min.js' %}"></script>
-    {{ the_script |safe }}
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>Bokeh Scatter Plots</title>
 
-{{ the_div |safe }}
+        <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css" type="text/css" />
+        <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
 
-</body>
+        {{ the_script | safe}}
+
+    </head>
+    <body>
+        {{ the_div | safe }}
+    </body>
 </html>
